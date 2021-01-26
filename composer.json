@@ -1,0 +1,25 @@
+{
+    "name": "enoliu\/easypay",
+    "description": "easypay",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "enoliu",
+            "email": "595929049@qq.com"
+        }
+    ],
+    "require": {
+      "ext-mbstring": "*",
+      "ext-openssl": "*",
+      "ext-ctype": "*",
+        "pimple/pimple": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Enoliu\\EasyPay\\": "src"
+        },
+        "files": [
+            "src/Kernel/functions.php"
+        ]
+    }
+}
