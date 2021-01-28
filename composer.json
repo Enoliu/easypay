@@ -9,17 +9,16 @@
         }
     ],
     "require": {
-      "ext-mbstring": "*",
-      "ext-openssl": "*",
-      "ext-ctype": "*",
-        "pimple/pimple": "^3.3"
+        "ext-mbstring": "*",
+        "ext-openssl": "*",
+        "ext-ctype": "*",
+        "pimple/pimple": "^3.3",
+        "guzzlehttp/guzzle": "^7.2",
+        "enoliu/utils": "^0.0.2"
     },
     "autoload": {
         "psr-4": {
             "Enoliu\\EasyPay\\": "src"
-        },
-        "files": [
-            "src/Kernel/functions.php"
-        ]
+        }
     }
 }

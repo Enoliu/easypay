@@ -1,14 +1,13 @@
 <?php
 
 
-namespace Enoliu\EasyPay\Kernel\Providers;
+namespace Enoliu\EasyPay\Wechat\Order;
 
 
-use Enoliu\Utils\Collection;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
-class ConfigServiceProvider implements ServiceProviderInterface
+class ServiceProvider implements ServiceProviderInterface
 {
 
     /**
@@ -17,12 +16,12 @@ class ConfigServiceProvider implements ServiceProviderInterface
      * This method should only be used to configure services and parameters.
      * It should not get services.
      *
-     * @param Container $pimple A container instance
+     * @param Container $pimple  A container instance
      */
     public function register(Container $pimple)
     {
-        ! isset($pimple['config']) && $pimple['config'] = function ($app) {
-            return new Collection($app->getConfig());
+        $pimple['order'] = function ($app) {
+            return new Client($app);
         };
     }
 }

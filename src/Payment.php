@@ -3,18 +3,26 @@
 
 namespace Enoliu\EasyPay;
 
+use Enoliu\EasyPay\Kernel\ServiceContainer;
+use Enoliu\Utils\Str;
 
-use Enoliu\EasyPay\Kernel\Support\Str;
-
+/**
+ * Class Payment
+ *
+ * @method static \Enoliu\EasyPay\Wechat\Application    wechat(array $config)
+ * @method static \Enoliu\EasyPay\Alipay\Application    alipay(array $config)
+ *
+ * @package Enoliu\EasyPay
+ */
 class Payment
 {
     /**
      * @param string $name
      * @param array  $config
      *
-     * @return mixed
+     * @return ServiceContainer
      */
-    public static function make(string $name, array $config)
+    public static function make(string $name, array $config): ServiceContainer
     {
         $namespace = Str::studly($name);
 
